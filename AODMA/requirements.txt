@@ -1,0 +1,41 @@
+
+--extra-index-url https://download.pytorch.org/whl/cu124
+
+# Deep Learning
+torch==2.6.0+cu124
+torchvision==0.21.0+cu124
+
+# Diffusion ecosystem
+diffusers==0.32.2
+transformers
+accelerate
+safetensors
+
+# Scientific computing
+numpy>=2.1,<2.3
+scipy
+pandas
+scikit-learn
+
+# Image processing
+Pillow
+
+# Visualization
+matplotlib
+seaborn
+
+# Experiment utilities
+tqdm
+PyYAML
+
+# Testing
+pytest
+torchmetrics
+torch-fidelity
+
+# Agentic AI and orchestration
+langgraph
+langchain-core
+langchain-ollama
+langchain-openai
+python-dotenv

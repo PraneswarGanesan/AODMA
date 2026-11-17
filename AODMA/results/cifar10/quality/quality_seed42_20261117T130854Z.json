@@ -1,0 +1,29 @@
+{
+    "experiment": "aodma_cifar10_quality_repeated_v2",
+    "timestamp_utc": "2026-11-17T13:08:54.329286+00:00",
+    "seed": 42,
+    "checkpoint": "checkpoints/ddpm_cifar10/latest.pt",
+    "device": "cuda",
+    "sample_count": 1000,
+    "batch_size": 16,
+    "real_reference": "CIFAR-10 test split",
+    "metrics": {
+        "fid": "Frechet Inception Distance",
+        "kid": "Kernel Inception Distance"
+    },
+    "results": [
+        {
+            "candidate": {
+                "name": "ddim_10",
+                "sampler": "ddim",
+                "steps": 10
+            },
+            "seed": 42,
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 186.1238555908203,
+            "kid_mean": 0.12675698101520538,
+            "kid_std": 1.9271656981345586e-07
+        }
+    ]
+}

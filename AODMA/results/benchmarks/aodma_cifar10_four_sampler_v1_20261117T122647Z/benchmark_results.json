@@ -1,0 +1,583 @@
+{
+    "metadata": {
+        "timestamp_utc": "2026-11-17T12:28:11.451006+00:00",
+        "python_version": "3.13.14",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "pytorch_version": "2.6.0+cu124",
+        "numpy_version": "2.2.6",
+        "cuda_available": true,
+        "cuda_version": "12.4",
+        "git_commit": "d0ff7ec1839b9a6e48b3524d3365ceab7d881afb",
+        "cpu_count": 8,
+        "gpu_name": "NVIDIA GeForce GTX 1650",
+        "gpu_count": 1,
+        "gpu_total_memory_mb": 4095.69,
+        "experiment_name": "aodma_cifar10_four_sampler_v1",
+        "seed": 42,
+        "checkpoint": "checkpoints/ddpm_cifar10/latest.pt",
+        "model_config": "experiments/configs/ddpm_cifar10.yaml",
+        "benchmark_config": "experiments/configs/benchmark_cifar10_clean.yaml",
+        "image_shape": [
+            16,
+            3,
+            32,
+            32
+        ]
+    },
+    "configuration": {
+        "experiment": {
+            "name": "aodma_cifar10_four_sampler_v1",
+            "seed": 42,
+            "deterministic": false
+        },
+        "benchmark": {
+            "warmup_trials": 1,
+            "repetitions": 3,
+            "batch_size": 16,
+            "save_samples": false,
+            "output_dir": "results/benchmarks",
+            "candidates": [
+                {
+                    "name": "ddpm_1000",
+                    "sampler": "ddpm"
+                },
+                {
+                    "name": "ddim_10",
+                    "sampler": "ddim",
+                    "steps": 10,
+                    "eta": 0.0
+                },
+                {
+                    "name": "ddim_20",
+                    "sampler": "ddim",
+                    "steps": 20,
+                    "eta": 0.0
+                },
+                {
+                    "name": "ddim_50",
+                    "sampler": "ddim",
+                    "steps": 50,
+                    "eta": 0.0
+                },
+                {
+                    "name": "dpm_solver_10",
+                    "sampler": "dpm_solver",
+                    "steps": 10
+                },
+                {
+                    "name": "dpm_solver_20",
+                    "sampler": "dpm_solver",
+                    "steps": 20
+                },
+                {
+                    "name": "dpm_solver_50",
+                    "sampler": "dpm_solver",
+                    "steps": 50
+                },
+                {
+                    "name": "unipc_10",
+                    "sampler": "unipc",
+                    "steps": 10
+                },
+                {
+                    "name": "unipc_20",
+                    "sampler": "unipc",
+                    "steps": 20
+                },
+                {
+                    "name": "unipc_50",
+                    "sampler": "unipc",
+                    "steps": 50
+                }
+            ]
+        },
+        "statistics": {
+            "confidence_level": 0.95,
+            "bootstrap_iterations": 5000
+        }
+    },
+    "results": [
+        {
+            "candidate": {
+                "name": "ddpm_1000",
+                "sampler": "ddpm"
+            },
+            "sampler": "ddpm",
+            "steps_requested": null,
+            "eta": 0.0,
+            "batch_size": 16,
+            "repetitions": 3,
+            "warmup_trials": 1,
+            "nfe_per_sample": {
+                "mean": 1000.0,
+                "values": [
+                    1000,
+                    1000,
+                    1000
+                ]
+            },
+            "latency": {
+                "count": 3,
+                "mean": 16703.612166670307,
+                "median": 16690.2098999999,
+                "std": 32.10889978647512,
+                "min": 16680.375600000843,
+                "max": 16740.251000010176,
+                "p95": 16735.246890009148,
+                "unit": "milliseconds",
+                "confidence_interval": {
+                    "confidence_level": 0.95,
+                    "lower": 16680.375600000843,
+                    "upper": 16740.251000010176,
+                    "method": "percentile_bootstrap",
+                    "bootstrap_iterations": 5000
+                }
+            },
+            "throughput_images_per_second": 0.9578766461020769,
+            "memory": {
+                "peak_allocated_mb": 36.478,
+                "peak_reserved_mb": 76.0
+            },
+            "raw_latency_ms": [
+                16680.375600000843,
+                16740.251000010176,
+                16690.2098999999
+            ]
+        },
+        {
+            "candidate": {
+                "name": "ddim_10",
+                "sampler": "ddim",
+                "steps": 10,
+                "eta": 0.0
+            },
+            "sampler": "ddim",
+            "steps_requested": 10,
+            "eta": 0.0,
+            "batch_size": 16,
+            "repetitions": 3,
+            "warmup_trials": 1,
+            "nfe_per_sample": {
+                "mean": 10.0,
+                "values": [
+                    10,
+                    10,
+                    10
+                ]
+            },
+            "latency": {
+                "count": 3,
+                "mean": 132.74543333682232,
+                "median": 130.1445999997668,
+                "std": 7.263503996894085,
+                "min": 127.14039999991655,
+                "max": 140.9513000107836,
+                "p95": 139.87063000968192,
+                "unit": "milliseconds",
+                "confidence_interval": {
+                    "confidence_level": 0.95,
+                    "lower": 127.14039999991655,
+                    "upper": 140.9513000107836,
+                    "method": "percentile_bootstrap",
+                    "bootstrap_iterations": 5000
+                }
+            },
+            "throughput_images_per_second": 120.53145330734141,
+            "memory": {
+                "peak_allocated_mb": 36.479,
+                "peak_reserved_mb": 76.0
+            },
+            "raw_latency_ms": [
+                130.1445999997668,
+                140.9513000107836,
+                127.14039999991655
+            ]
+        },
+        {
+            "candidate": {
+                "name": "ddim_20",
+                "sampler": "ddim",
+                "steps": 20,
+                "eta": 0.0
+            },
+            "sampler": "ddim",
+            "steps_requested": 20,
+            "eta": 0.0,
+            "batch_size": 16,
+            "repetitions": 3,
+            "warmup_trials": 1,
+            "nfe_per_sample": {
+                "mean": 20.0,
+                "values": [
+                    20,
+                    20,
+                    20
+                ]
+            },
+            "latency": {
+                "count": 3,
+                "mean": 269.9565666844137,
+                "median": 249.41260000923648,
+                "std": 37.205011590084155,
+                "min": 247.5533000251744,
+                "max": 312.9038000188302,
+                "p95": 306.55468001787085,
+                "unit": "milliseconds",
+                "confidence_interval": {
+                    "confidence_level": 0.95,
+                    "lower": 247.5533000251744,
+                    "upper": 312.9038000188302,
+                    "method": "percentile_bootstrap",
+                    "bootstrap_iterations": 5000
+                }
+            },
+            "throughput_images_per_second": 59.268793482265686,
+            "memory": {
+                "peak_allocated_mb": 36.479,
+                "peak_reserved_mb": 76.0
+            },
+            "raw_latency_ms": [
+                312.9038000188302,
+                249.41260000923648,
+                247.5533000251744
+            ]
+        },
+        {
+            "candidate": {
+                "name": "ddim_50",
+                "sampler": "ddim",
+                "steps": 50,
+                "eta": 0.0
+            },
+            "sampler": "ddim",
+            "steps_requested": 50,
+            "eta": 0.0,
+            "batch_size": 16,
+            "repetitions": 3,
+            "warmup_trials": 1,
+            "nfe_per_sample": {
+                "mean": 50.0,
+                "values": [
+                    50,
+                    50,
+                    50
+                ]
+            },
+            "latency": {
+                "count": 3,
+                "mean": 1087.8656666609459,
+                "median": 1147.8484999970533,
+                "std": 127.68496307952212,
+                "min": 941.233799996553,
+                "max": 1174.5146999892313,
+                "p95": 1171.8480799900135,
+                "unit": "milliseconds",
+                "confidence_interval": {
+                    "confidence_level": 0.95,
+                    "lower": 941.233799996553,
+                    "upper": 1174.5146999892313,
+                    "method": "percentile_bootstrap",
+                    "bootstrap_iterations": 5000
+                }
+            },
+            "throughput_images_per_second": 14.707698285129084,
+            "memory": {
+                "peak_allocated_mb": 36.479,
+                "peak_reserved_mb": 76.0
+            },
+            "raw_latency_ms": [
+                941.233799996553,
+                1147.8484999970533,
+                1174.5146999892313
+            ]
+        },
+        {
+            "candidate": {
+                "name": "dpm_solver_10",
+                "sampler": "dpm_solver",
+                "steps": 10
+            },
+            "sampler": "dpm_solver",
+            "steps_requested": 10,
+            "eta": 0.0,
+            "batch_size": 16,
+            "repetitions": 3,
+            "warmup_trials": 1,
+            "nfe_per_sample": {
+                "mean": 10.0,
+                "values": [
+                    10,
+                    10,
+                    10
+                ]
+            },
+            "latency": {
+                "count": 3,
+                "mean": 173.56870000367053,
+                "median": 156.13529999973252,
+                "std": 44.597025638471635,
+                "min": 140.32169998972677,
+                "max": 224.2491000215523,
+                "p95": 217.43772001937032,
+                "unit": "milliseconds",
+                "confidence_interval": {
+                    "confidence_level": 0.95,
+                    "lower": 140.32169998972677,
+                    "upper": 224.2491000215523,
+                    "method": "percentile_bootstrap",
+                    "bootstrap_iterations": 5000
+                }
+            },
+            "throughput_images_per_second": 92.18251908127237,
+            "memory": {
+                "peak_allocated_mb": 36.478,
+                "peak_reserved_mb": 76.0
+            },
+            "raw_latency_ms": [
+                156.13529999973252,
+                224.2491000215523,
+                140.32169998972677
+            ]
+        },
+        {
+            "candidate": {
+                "name": "dpm_solver_20",
+                "sampler": "dpm_solver",
+                "steps": 20
+            },
+            "sampler": "dpm_solver",
+            "steps_requested": 20,
+            "eta": 0.0,
+            "batch_size": 16,
+            "repetitions": 3,
+            "warmup_trials": 1,
+            "nfe_per_sample": {
+                "mean": 20.0,
+                "values": [
+                    20,
+                    20,
+                    20
+                ]
+            },
+            "latency": {
+                "count": 3,
+                "mean": 248.787266658231,
+                "median": 248.4993999823928,
+                "std": 1.7423276795677964,
+                "min": 247.20680000609718,
+                "max": 250.65559998620301,
+                "p95": 250.439979985822,
+                "unit": "milliseconds",
+                "confidence_interval": {
+                    "confidence_level": 0.95,
+                    "lower": 247.20680000609718,
+                    "upper": 250.65559998620301,
+                    "method": "percentile_bootstrap",
+                    "bootstrap_iterations": 5000
+                }
+            },
+            "throughput_images_per_second": 64.31197309619482,
+            "memory": {
+                "peak_allocated_mb": 36.478,
+                "peak_reserved_mb": 76.0
+            },
+            "raw_latency_ms": [
+                248.4993999823928,
+                247.20680000609718,
+                250.65559998620301
+            ]
+        },
+        {
+            "candidate": {
+                "name": "dpm_solver_50",
+                "sampler": "dpm_solver",
+                "steps": 50
+            },
+            "sampler": "dpm_solver",
+            "steps_requested": 50,
+            "eta": 0.0,
+            "batch_size": 16,
+            "repetitions": 3,
+            "warmup_trials": 1,
+            "nfe_per_sample": {
+                "mean": 50.0,
+                "values": [
+                    50,
+                    50,
+                    50
+                ]
+            },
+            "latency": {
+                "count": 3,
+                "mean": 1076.1551666752591,
+                "median": 1073.6865000217222,
+                "std": 72.59038990435747,
+                "min": 1004.83059999533,
+                "max": 1149.948400008725,
+                "p95": 1142.3222100100247,
+                "unit": "milliseconds",
+                "confidence_interval": {
+                    "confidence_level": 0.95,
+                    "lower": 1004.83059999533,
+                    "upper": 1149.948400008725,
+                    "method": "percentile_bootstrap",
+                    "bootstrap_iterations": 5000
+                }
+            },
+            "throughput_images_per_second": 14.867744443797447,
+            "memory": {
+                "peak_allocated_mb": 36.478,
+                "peak_reserved_mb": 76.0
+            },
+            "raw_latency_ms": [
+                1004.83059999533,
+                1149.948400008725,
+                1073.6865000217222
+            ]
+        },
+        {
+            "candidate": {
+                "name": "unipc_10",
+                "sampler": "unipc",
+                "steps": 10
+            },
+            "sampler": "unipc",
+            "steps_requested": 10,
+            "eta": 0.0,
+            "batch_size": 16,
+            "repetitions": 3,
+            "warmup_trials": 1,
+            "nfe_per_sample": {
+                "mean": 10.0,
+                "values": [
+                    10,
+                    10,
+                    10
+                ]
+            },
+            "latency": {
+                "count": 3,
+                "mean": 188.5197333273633,
+                "median": 188.2595999923069,
+                "std": 6.332508520920816,
+                "min": 182.32130000251345,
+                "max": 194.97829998726957,
+                "p95": 194.3064299877733,
+                "unit": "milliseconds",
+                "confidence_interval": {
+                    "confidence_level": 0.95,
+                    "lower": 182.32130000251345,
+                    "upper": 194.97829998726957,
+                    "method": "percentile_bootstrap",
+                    "bootstrap_iterations": 5000
+                }
+            },
+            "throughput_images_per_second": 84.87175171320715,
+            "memory": {
+                "peak_allocated_mb": 36.666,
+                "peak_reserved_mb": 76.0
+            },
+            "raw_latency_ms": [
+                194.97829998726957,
+                188.2595999923069,
+                182.32130000251345
+            ]
+        },
+        {
+            "candidate": {
+                "name": "unipc_20",
+                "sampler": "unipc",
+                "steps": 20
+            },
+            "sampler": "unipc",
+            "steps_requested": 20,
+            "eta": 0.0,
+            "batch_size": 16,
+            "repetitions": 3,
+            "warmup_trials": 1,
+            "nfe_per_sample": {
+                "mean": 20.0,
+                "values": [
+                    20,
+                    20,
+                    20
+                ]
+            },
+            "latency": {
+                "count": 3,
+                "mean": 310.9302333323285,
+                "median": 325.5907999991905,
+                "std": 32.68129763218849,
+                "min": 273.4856999886688,
+                "max": 333.7142000091262,
+                "p95": 332.90186000813264,
+                "unit": "milliseconds",
+                "confidence_interval": {
+                    "confidence_level": 0.95,
+                    "lower": 273.4856999886688,
+                    "upper": 333.7142000091262,
+                    "method": "percentile_bootstrap",
+                    "bootstrap_iterations": 5000
+                }
+            },
+            "throughput_images_per_second": 51.458489026697116,
+            "memory": {
+                "peak_allocated_mb": 36.666,
+                "peak_reserved_mb": 76.0
+            },
+            "raw_latency_ms": [
+                333.7142000091262,
+                325.5907999991905,
+                273.4856999886688
+            ]
+        },
+        {
+            "candidate": {
+                "name": "unipc_50",
+                "sampler": "unipc",
+                "steps": 50
+            },
+            "sampler": "unipc",
+            "steps_requested": 50,
+            "eta": 0.0,
+            "batch_size": 16,
+            "repetitions": 3,
+            "warmup_trials": 1,
+            "nfe_per_sample": {
+                "mean": 50.0,
+                "values": [
+                    50,
+                    50,
+                    50
+                ]
+            },
+            "latency": {
+                "count": 3,
+                "mean": 734.9477666721214,
+                "median": 738.6311000154819,
+                "std": 17.52288658709226,
+                "min": 715.8760000020266,
+                "max": 750.3361999988556,
+                "p95": 749.1656900005182,
+                "unit": "milliseconds",
+                "confidence_interval": {
+                    "confidence_level": 0.95,
+                    "lower": 715.8760000020266,
+                    "upper": 750.3361999988556,
+                    "method": "percentile_bootstrap",
+                    "bootstrap_iterations": 5000
+                }
+            },
+            "throughput_images_per_second": 21.770254602512455,
+            "memory": {
+                "peak_allocated_mb": 36.666,
+                "peak_reserved_mb": 76.0
+            },
+            "raw_latency_ms": [
+                738.6311000154819,
+                715.8760000020266,
+                750.3361999988556
+            ]
+        }
+    ]
+}

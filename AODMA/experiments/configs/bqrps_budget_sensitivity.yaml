@@ -1,0 +1,21 @@
+
+experiment:
+  name: aodma_bqrps_budget_sensitivity_v1
+  seed: 42
+
+portfolio:
+  path: results/cifar10/bqrps/unified_portfolio.json
+
+selection:
+  quality_safety_margin: 0.0
+
+sensitivity:
+  latency_budgets_ms:
+    - 150
+    - 250
+    - 350
+    - 500
+    - 1200
+
+  max_memory_mb: 40.0
+  max_nfe: 50

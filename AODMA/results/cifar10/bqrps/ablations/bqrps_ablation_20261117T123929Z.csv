@@ -1,0 +1,10 @@
+experiment_type,name,method,selected_candidate,sampler,nfe,fid,latency_mean_ms,latency_upper_risk_ms,memory_mb,feasible_candidates,total_candidates,status
+baseline,bqrps,bqrps,ddim_linear_nfe20_fp32,ddim,20,140.90017700195312,269.9565666844137,332.67911117808933,36.479,5,10,selected
+baseline,best_fid,best_fid,ddim_linear_nfe20_fp32,ddim,20,140.90017700195312,269.9565666844137,332.67911117808933,36.479,5,10,selected
+baseline,fastest,fastest,ddim_linear_nfe10_fp32,ddim,10,186.1238555908203,132.74543333682232,144.99070442139313,36.479,5,10,selected
+baseline,lowest_nfe,lowest_nfe,ddim_linear_nfe10_fp32,ddim,10,186.1238555908203,132.74543333682232,144.99070442139313,36.479,5,10,selected
+ablation,full_bqrps,bqrps,ddim_linear_nfe20_fp32,ddim,20,140.90017700195312,269.9565666844137,332.67911117808933,36.479,5,10,selected
+ablation,no_latency_uncertainty,bqrps,ddim_linear_nfe20_fp32,ddim,20,140.90017700195312,269.9565666844137,332.67911117808933,36.479,6,10,selected
+ablation,no_latency_constraint,bqrps,ddim_linear_nfe50_fp32,ddim,50,101.18545532226562,1087.8656666609459,1303.1249942528,36.479,9,10,selected
+ablation,no_memory_constraint,bqrps,ddim_linear_nfe20_fp32,ddim,20,140.90017700195312,269.9565666844137,332.67911117808933,36.479,5,10,selected
+ablation,no_nfe_constraint,bqrps,ddim_linear_nfe20_fp32,ddim,20,140.90017700195312,269.9565666844137,332.67911117808933,36.479,5,10,selected

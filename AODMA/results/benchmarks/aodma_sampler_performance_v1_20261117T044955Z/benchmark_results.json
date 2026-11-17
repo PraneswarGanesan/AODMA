@@ -1,0 +1,345 @@
+{
+    "metadata": {
+        "timestamp_utc": "2026-11-17T04:51:32.100906+00:00",
+        "python_version": "3.13.14",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "pytorch_version": "2.6.0+cu124",
+        "numpy_version": "2.2.6",
+        "cuda_available": true,
+        "cuda_version": "12.4",
+        "git_commit": "d0ff7ec1839b9a6e48b3524d3365ceab7d881afb",
+        "cpu_count": 8,
+        "gpu_name": "NVIDIA GeForce GTX 1650",
+        "gpu_count": 1,
+        "gpu_total_memory_mb": 4095.69,
+        "experiment_name": "aodma_sampler_performance_v1",
+        "seed": 42,
+        "checkpoint": "checkpoints/ddpm_mnist/latest.pt",
+        "model_config": "experiments/configs/ddpm_mnist.yaml",
+        "benchmark_config": "experiments/configs/benchmark.yaml",
+        "image_shape": [
+            16,
+            1,
+            28,
+            28
+        ]
+    },
+    "configuration": {
+        "experiment": {
+            "name": "aodma_sampler_performance_v1",
+            "seed": 42,
+            "deterministic": false
+        },
+        "benchmark": {
+            "warmup_trials": 1,
+            "repetitions": 5,
+            "batch_size": 16,
+            "save_samples": true,
+            "output_dir": "results/benchmarks",
+            "candidates": [
+                {
+                    "name": "ddpm_1000",
+                    "sampler": "ddpm"
+                },
+                {
+                    "name": "ddim_10",
+                    "sampler": "ddim",
+                    "steps": 10,
+                    "eta": 0.0
+                },
+                {
+                    "name": "ddim_20",
+                    "sampler": "ddim",
+                    "steps": 20,
+                    "eta": 0.0
+                },
+                {
+                    "name": "ddim_50",
+                    "sampler": "ddim",
+                    "steps": 50,
+                    "eta": 0.0
+                },
+                {
+                    "name": "ddim_100",
+                    "sampler": "ddim",
+                    "steps": 100,
+                    "eta": 0.0
+                }
+            ]
+        },
+        "statistics": {
+            "confidence_level": 0.95,
+            "bootstrap_iterations": 5000
+        }
+    },
+    "results": [
+        {
+            "candidate": {
+                "name": "ddpm_1000",
+                "sampler": "ddpm"
+            },
+            "sampler": "ddpm",
+            "steps_requested": null,
+            "eta": 0.0,
+            "batch_size": 16,
+            "repetitions": 5,
+            "warmup_trials": 1,
+            "nfe_per_sample": {
+                "mean": 1000.0,
+                "values": [
+                    1000,
+                    1000,
+                    1000,
+                    1000,
+                    1000
+                ]
+            },
+            "latency": {
+                "count": 5,
+                "mean": 13066.905299993232,
+                "median": 12958.425099990563,
+                "std": 355.6285024118015,
+                "min": 12718.071499984944,
+                "max": 13451.756199996453,
+                "p95": 13448.620299994946,
+                "unit": "milliseconds",
+                "confidence_interval": {
+                    "confidence_level": 0.95,
+                    "lower": 12786.992419994203,
+                    "upper": 13346.81817999226,
+                    "method": "percentile_bootstrap",
+                    "bootstrap_iterations": 5000
+                }
+            },
+            "throughput_images_per_second": 1.2244674337701282,
+            "memory": {
+                "peak_allocated_mb": 32.721,
+                "peak_reserved_mb": 76.0
+            },
+            "raw_latency_ms": [
+                13436.076699988917,
+                12958.425099990563,
+                12770.197000005282,
+                12718.071499984944,
+                13451.756199996453
+            ],
+            "sample_grid": "results\\benchmarks\\aodma_sampler_performance_v1_20261117T044955Z\\samples\\ddpm_1000.png"
+        },
+        {
+            "candidate": {
+                "name": "ddim_10",
+                "sampler": "ddim",
+                "steps": 10,
+                "eta": 0.0
+            },
+            "sampler": "ddim",
+            "steps_requested": 10,
+            "eta": 0.0,
+            "batch_size": 16,
+            "repetitions": 5,
+            "warmup_trials": 1,
+            "nfe_per_sample": {
+                "mean": 10.0,
+                "values": [
+                    10,
+                    10,
+                    10,
+                    10,
+                    10
+                ]
+            },
+            "latency": {
+                "count": 5,
+                "mean": 105.98071999847889,
+                "median": 100.9751999808941,
+                "std": 9.025721696135406,
+                "min": 99.06900001806207,
+                "max": 119.43930000416003,
+                "p95": 117.78262000298128,
+                "unit": "milliseconds",
+                "confidence_interval": {
+                    "confidence_level": 0.95,
+                    "lower": 99.5273439999437,
+                    "upper": 113.74760000035167,
+                    "method": "percentile_bootstrap",
+                    "bootstrap_iterations": 5000
+                }
+            },
+            "throughput_images_per_second": 150.97085583330292,
+            "memory": {
+                "peak_allocated_mb": 32.722,
+                "peak_reserved_mb": 76.0
+            },
+            "raw_latency_ms": [
+                119.43930000416003,
+                99.06900001806207,
+                100.9751999808941,
+                99.26419999101199,
+                111.15589999826625
+            ],
+            "sample_grid": "results\\benchmarks\\aodma_sampler_performance_v1_20261117T044955Z\\samples\\ddim_10.png"
+        },
+        {
+            "candidate": {
+                "name": "ddim_20",
+                "sampler": "ddim",
+                "steps": 20,
+                "eta": 0.0
+            },
+            "sampler": "ddim",
+            "steps_requested": 20,
+            "eta": 0.0,
+            "batch_size": 16,
+            "repetitions": 5,
+            "warmup_trials": 1,
+            "nfe_per_sample": {
+                "mean": 20.0,
+                "values": [
+                    20,
+                    20,
+                    20,
+                    20,
+                    20
+                ]
+            },
+            "latency": {
+                "count": 5,
+                "mean": 217.35034000012092,
+                "median": 210.72250002180226,
+                "std": 22.569929744870272,
+                "min": 201.42569998279214,
+                "max": 257.0772000181023,
+                "p95": 247.95070001273416,
+                "unit": "milliseconds",
+                "confidence_interval": {
+                    "confidence_level": 0.95,
+                    "lower": 204.36067998525687,
+                    "upper": 237.6071400125511,
+                    "method": "percentile_bootstrap",
+                    "bootstrap_iterations": 5000
+                }
+            },
+            "throughput_images_per_second": 73.61387150344967,
+            "memory": {
+                "peak_allocated_mb": 32.722,
+                "peak_reserved_mb": 76.0
+            },
+            "raw_latency_ms": [
+                201.42569998279214,
+                210.72250002180226,
+                206.08159998664632,
+                211.4446999912616,
+                257.0772000181023
+            ],
+            "sample_grid": "results\\benchmarks\\aodma_sampler_performance_v1_20261117T044955Z\\samples\\ddim_20.png"
+        },
+        {
+            "candidate": {
+                "name": "ddim_50",
+                "sampler": "ddim",
+                "steps": 50,
+                "eta": 0.0
+            },
+            "sampler": "ddim",
+            "steps_requested": 50,
+            "eta": 0.0,
+            "batch_size": 16,
+            "repetitions": 5,
+            "warmup_trials": 1,
+            "nfe_per_sample": {
+                "mean": 50.0,
+                "values": [
+                    50,
+                    50,
+                    50,
+                    50,
+                    50
+                ]
+            },
+            "latency": {
+                "count": 5,
+                "mean": 698.175000003539,
+                "median": 674.229700001888,
+                "std": 46.012737974490214,
+                "min": 659.6083999902476,
+                "max": 749.4382000004407,
+                "p95": 748.9322000008542,
+                "unit": "milliseconds",
+                "confidence_interval": {
+                    "confidence_level": 0.95,
+                    "lower": 662.9655000055209,
+                    "upper": 733.3845000015572,
+                    "method": "percentile_bootstrap",
+                    "bootstrap_iterations": 5000
+                }
+            },
+            "throughput_images_per_second": 22.916890464308942,
+            "memory": {
+                "peak_allocated_mb": 32.722,
+                "peak_reserved_mb": 76.0
+            },
+            "raw_latency_ms": [
+                660.6905000226106,
+                674.229700001888,
+                746.9082000025082,
+                749.4382000004407,
+                659.6083999902476
+            ],
+            "sample_grid": "results\\benchmarks\\aodma_sampler_performance_v1_20261117T044955Z\\samples\\ddim_50.png"
+        },
+        {
+            "candidate": {
+                "name": "ddim_100",
+                "sampler": "ddim",
+                "steps": 100,
+                "eta": 0.0
+            },
+            "sampler": "ddim",
+            "steps_requested": 100,
+            "eta": 0.0,
+            "batch_size": 16,
+            "repetitions": 5,
+            "warmup_trials": 1,
+            "nfe_per_sample": {
+                "mean": 100.0,
+                "values": [
+                    100,
+                    100,
+                    100,
+                    100,
+                    100
+                ]
+            },
+            "latency": {
+                "count": 5,
+                "mean": 1349.0373200038448,
+                "median": 1338.8982000178657,
+                "std": 33.28554824607129,
+                "min": 1322.3409999918658,
+                "max": 1407.1296000038274,
+                "p95": 1393.943600001512,
+                "unit": "milliseconds",
+                "confidence_interval": {
+                    "confidence_level": 0.95,
+                    "lower": 1328.9638800022658,
+                    "upper": 1379.6413200034294,
+                    "method": "percentile_bootstrap",
+                    "bootstrap_iterations": 5000
+                }
+            },
+            "throughput_images_per_second": 11.860309394520234,
+            "memory": {
+                "peak_allocated_mb": 32.722,
+                "peak_reserved_mb": 76.0
+            },
+            "raw_latency_ms": [
+                1335.618200013414,
+                1338.8982000178657,
+                1407.1296000038274,
+                1341.199599992251,
+                1322.3409999918658
+            ],
+            "sample_grid": "results\\benchmarks\\aodma_sampler_performance_v1_20261117T044955Z\\samples\\ddim_100.png"
+        }
+    ]
+}

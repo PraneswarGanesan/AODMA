@@ -1,0 +1,181 @@
+{
+    "experiment": "aodma_bqrps_ablation_v1",
+    "dataset": "CIFAR-10",
+    "quality_metric": "FID",
+    "portfolio_path": "results\\cifar10\\bqrps\\unified_portfolio.json",
+    "portfolio_candidate_count": 10,
+    "base_budget": {
+        "max_latency_ms": 350.0,
+        "max_memory_mb": 40.0,
+        "max_nfe": 50
+    },
+    "quality_uncertainty_note": "Only one FID observation is available per candidate. FID uncertainty is not empirically estimated.",
+    "latency_uncertainty_note": "Latency risk uses a one-sided Student-t estimate from three benchmark repetitions.",
+    "results": [
+        {
+            "experiment_type": "baseline",
+            "name": "bqrps",
+            "method": "bqrps",
+            "selected_candidate": "ddim_linear_nfe20_fp32",
+            "sampler": "ddim",
+            "nfe": 20,
+            "fid": 140.90017700195312,
+            "latency_mean_ms": 269.9565666844137,
+            "latency_upper_risk_ms": 332.67911117808933,
+            "memory_mb": 36.479,
+            "feasible_candidates": 5,
+            "total_candidates": 10,
+            "status": "selected"
+        },
+        {
+            "experiment_type": "baseline",
+            "name": "best_fid",
+            "method": "best_fid",
+            "selected_candidate": "ddim_linear_nfe20_fp32",
+            "sampler": "ddim",
+            "nfe": 20,
+            "fid": 140.90017700195312,
+            "latency_mean_ms": 269.9565666844137,
+            "latency_upper_risk_ms": 332.67911117808933,
+            "memory_mb": 36.479,
+            "feasible_candidates": 5,
+            "total_candidates": 10,
+            "status": "selected"
+        },
+        {
+            "experiment_type": "baseline",
+            "name": "fastest",
+            "method": "fastest",
+            "selected_candidate": "ddim_linear_nfe10_fp32",
+            "sampler": "ddim",
+            "nfe": 10,
+            "fid": 186.1238555908203,
+            "latency_mean_ms": 132.74543333682232,
+            "latency_upper_risk_ms": 144.99070442139313,
+            "memory_mb": 36.479,
+            "feasible_candidates": 5,
+            "total_candidates": 10,
+            "status": "selected"
+        },
+        {
+            "experiment_type": "baseline",
+            "name": "lowest_nfe",
+            "method": "lowest_nfe",
+            "selected_candidate": "ddim_linear_nfe10_fp32",
+            "sampler": "ddim",
+            "nfe": 10,
+            "fid": 186.1238555908203,
+            "latency_mean_ms": 132.74543333682232,
+            "latency_upper_risk_ms": 144.99070442139313,
+            "memory_mb": 36.479,
+            "feasible_candidates": 5,
+            "total_candidates": 10,
+            "status": "selected"
+        },
+        {
+            "experiment_type": "ablation",
+            "name": "full_bqrps",
+            "method": "bqrps",
+            "selected_candidate": "ddim_linear_nfe20_fp32",
+            "sampler": "ddim",
+            "nfe": 20,
+            "fid": 140.90017700195312,
+            "latency_mean_ms": 269.9565666844137,
+            "latency_upper_risk_ms": 332.67911117808933,
+            "memory_mb": 36.479,
+            "feasible_candidates": 5,
+            "total_candidates": 10,
+            "status": "selected",
+            "settings": {
+                "use_latency_uncertainty": true,
+                "max_latency_ms": 350.0,
+                "max_memory_mb": 40.0,
+                "max_nfe": 50
+            }
+        },
+        {
+            "experiment_type": "ablation",
+            "name": "no_latency_uncertainty",
+            "method": "bqrps",
+            "selected_candidate": "ddim_linear_nfe20_fp32",
+            "sampler": "ddim",
+            "nfe": 20,
+            "fid": 140.90017700195312,
+            "latency_mean_ms": 269.9565666844137,
+            "latency_upper_risk_ms": 332.67911117808933,
+            "memory_mb": 36.479,
+            "feasible_candidates": 6,
+            "total_candidates": 10,
+            "status": "selected",
+            "settings": {
+                "use_latency_uncertainty": false,
+                "max_latency_ms": 350.0,
+                "max_memory_mb": 40.0,
+                "max_nfe": 50
+            }
+        },
+        {
+            "experiment_type": "ablation",
+            "name": "no_latency_constraint",
+            "method": "bqrps",
+            "selected_candidate": "ddim_linear_nfe50_fp32",
+            "sampler": "ddim",
+            "nfe": 50,
+            "fid": 101.18545532226562,
+            "latency_mean_ms": 1087.8656666609459,
+            "latency_upper_risk_ms": 1303.1249942528,
+            "memory_mb": 36.479,
+            "feasible_candidates": 9,
+            "total_candidates": 10,
+            "status": "selected",
+            "settings": {
+                "use_latency_uncertainty": true,
+                "max_latency_ms": 100000.0,
+                "max_memory_mb": 40.0,
+                "max_nfe": 50
+            }
+        },
+        {
+            "experiment_type": "ablation",
+            "name": "no_memory_constraint",
+            "method": "bqrps",
+            "selected_candidate": "ddim_linear_nfe20_fp32",
+            "sampler": "ddim",
+            "nfe": 20,
+            "fid": 140.90017700195312,
+            "latency_mean_ms": 269.9565666844137,
+            "latency_upper_risk_ms": 332.67911117808933,
+            "memory_mb": 36.479,
+            "feasible_candidates": 5,
+            "total_candidates": 10,
+            "status": "selected",
+            "settings": {
+                "use_latency_uncertainty": true,
+                "max_latency_ms": 350.0,
+                "max_memory_mb": 100000.0,
+                "max_nfe": 50
+            }
+        },
+        {
+            "experiment_type": "ablation",
+            "name": "no_nfe_constraint",
+            "method": "bqrps",
+            "selected_candidate": "ddim_linear_nfe20_fp32",
+            "sampler": "ddim",
+            "nfe": 20,
+            "fid": 140.90017700195312,
+            "latency_mean_ms": 269.9565666844137,
+            "latency_upper_risk_ms": 332.67911117808933,
+            "memory_mb": 36.479,
+            "feasible_candidates": 5,
+            "total_candidates": 10,
+            "status": "selected",
+            "settings": {
+                "use_latency_uncertainty": true,
+                "max_latency_ms": 350.0,
+                "max_memory_mb": 40.0,
+                "max_nfe": 2000
+            }
+        }
+    ]
+}

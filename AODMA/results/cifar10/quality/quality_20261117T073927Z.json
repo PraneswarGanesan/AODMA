@@ -1,0 +1,197 @@
+{
+    "experiment": "aodma_cifar10_quality_v1",
+    "timestamp_utc": "2026-11-17T07:39:27.819174+00:00",
+    "seed": 42,
+    "checkpoint": "checkpoints/ddpm_cifar10/latest.pt",
+    "device": "cuda",
+    "sample_count": 1000,
+    "batch_size": 16,
+    "metrics": {
+        "fid": "Frechet Inception Distance",
+        "kid": "Kernel Inception Distance"
+    },
+    "results": [
+        {
+            "candidate": {
+                "name": "ddpm_10",
+                "sampler": "ddpm",
+                "steps": 10
+            },
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 108.72185516357422,
+            "kid": {
+                "mean": 0.02600368857383728,
+                "std": 1.4992565411375836e-07
+            }
+        },
+        {
+            "candidate": {
+                "name": "ddpm_20",
+                "sampler": "ddpm",
+                "steps": 20
+            },
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 108.72185516357422,
+            "kid": {
+                "mean": 0.026003703474998474,
+                "std": 1.2760689571678085e-07
+            }
+        },
+        {
+            "candidate": {
+                "name": "ddpm_50",
+                "sampler": "ddpm",
+                "steps": 50
+            },
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 108.72185516357422,
+            "kid": {
+                "mean": 0.026003684848546982,
+                "std": 1.4901303302394808e-07
+            }
+        },
+        {
+            "candidate": {
+                "name": "ddim_10",
+                "sampler": "ddim",
+                "steps": 10
+            },
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 186.1238555908203,
+            "kid": {
+                "mean": 0.12675704061985016,
+                "std": 1.7357294268549595e-07
+            }
+        },
+        {
+            "candidate": {
+                "name": "ddim_20",
+                "sampler": "ddim",
+                "steps": 20
+            },
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 140.90017700195312,
+            "kid": {
+                "mean": 0.08182676136493683,
+                "std": 1.9414575547216373e-07
+            }
+        },
+        {
+            "candidate": {
+                "name": "ddim_50",
+                "sampler": "ddim",
+                "steps": 50
+            },
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 101.18545532226562,
+            "kid": {
+                "mean": 0.04430480673909187,
+                "std": 1.6076666042863508e-07
+            }
+        },
+        {
+            "candidate": {
+                "name": "dpm_solver_10",
+                "sampler": "dpm_solver",
+                "steps": 10
+            },
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 248.09454345703125,
+            "kid": {
+                "mean": 0.1685461699962616,
+                "std": 7.747686936454556e-08
+            }
+        },
+        {
+            "candidate": {
+                "name": "dpm_solver_20",
+                "sampler": "dpm_solver",
+                "steps": 20
+            },
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 232.6023712158203,
+            "kid": {
+                "mean": 0.1495957374572754,
+                "std": 1.5115965368295292e-07
+            }
+        },
+        {
+            "candidate": {
+                "name": "dpm_solver_50",
+                "sampler": "dpm_solver",
+                "steps": 50
+            },
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 222.63616943359375,
+            "kid": {
+                "mean": 0.1356738656759262,
+                "std": 1.4469927123172965e-07
+            }
+        },
+        {
+            "candidate": {
+                "name": "unipc_10",
+                "sampler": "unipc",
+                "steps": 10
+            },
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 244.9410400390625,
+            "kid": {
+                "mean": 0.16534028947353363,
+                "std": 1.8035261462046037e-07
+            }
+        },
+        {
+            "candidate": {
+                "name": "unipc_20",
+                "sampler": "unipc",
+                "steps": 20
+            },
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 229.91424560546875,
+            "kid": {
+                "mean": 0.14708620309829712,
+                "std": 1.2414598415944056e-07
+            }
+        },
+        {
+            "candidate": {
+                "name": "unipc_50",
+                "sampler": "unipc",
+                "steps": 50
+            },
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 219.10238647460938,
+            "kid": {
+                "mean": 0.13149704039096832,
+                "std": 2.0822135127218644e-07
+            }
+        },
+        {
+            "candidate": {
+                "name": "ddpm_1000",
+                "sampler": "ddpm",
+                "steps": 1000
+            },
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 108.72185516357422,
+            "kid": {
+                "mean": 0.026003694161772728,
+                "std": 1.5076709303230018e-07
+            }
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+
+experiment:
+  name: aodma_cifar10_four_sampler_v1
+  seed: 42
+  deterministic: false
+
+benchmark:
+  warmup_trials: 1
+  repetitions: 30
+  batch_size: 16
+  save_samples: false
+  output_dir: results/benchmarks
+
+  candidates:
+    - name: ddpm_1000
+      sampler: ddpm
+
+    - name: ddim_10
+      sampler: ddim
+      steps: 10
+      eta: 0.0
+
+    - name: ddim_20
+      sampler: ddim
+      steps: 20
+      eta: 0.0
+
+    - name: ddim_50
+      sampler: ddim
+      steps: 50
+      eta: 0.0
+
+    - name: dpm_solver_10
+      sampler: dpm_solver
+      steps: 10
+
+    - name: dpm_solver_20
+      sampler: dpm_solver
+      steps: 20
+
+    - name: dpm_solver_50
+      sampler: dpm_solver
+      steps: 50
+
+    - name: unipc_10
+      sampler: unipc
+      steps: 10
+
+    - name: unipc_20
+      sampler: unipc
+      steps: 20
+
+    - name: unipc_50
+      sampler: unipc
+      steps: 50
+
+statistics:
+  confidence_level: 0.95
+  bootstrap_iterations: 5000

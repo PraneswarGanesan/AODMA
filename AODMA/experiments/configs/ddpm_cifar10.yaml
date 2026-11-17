@@ -1,0 +1,38 @@
+
+experiment:
+  name: aodma_ddpm_cifar10
+  seed: 42
+
+dataset:
+  name: cifar10
+  data_dir: data
+  image_size: 32
+  channels: 3
+  download: true
+
+model:
+  in_channels: 3
+  out_channels: 3
+  base_channels: 32
+  time_dim: 256
+
+diffusion:
+  timesteps: 1000
+  schedule_type: linear
+  beta_start: 0.0001
+  beta_end: 0.02
+
+training:
+  epochs: 20
+  batch_size: 16
+  learning_rate: 0.0002
+  weight_decay: 0.0001
+  ema_decay: 0.999
+  gradient_clip: 1.0
+  mixed_precision: false
+  num_workers: 0
+  log_interval: 100
+
+storage:
+  checkpoint_dir: checkpoints/ddpm_cifar10
+  log_path: results/cifar10/training.jsonl

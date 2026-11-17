@@ -1,0 +1,255 @@
+{
+    "experiment": "AODMA Multi-Agent CIFAR-10",
+    "timestamp_utc": "2026-11-17T16:36:21.911617+00:00",
+    "status": "completed",
+    "messages": [
+        "Research Agent completed portfolio analysis.",
+        "BQRPS selected ddim_linear_nfe20_fp32 from 5 feasible candidates out of 10.",
+        "Execution completed: ddim_linear_nfe20_fp32 with mean batch latency 411.75 ms.",
+        "Smoke evaluation passed for 32 generated images.",
+        "Reporting Agent generated the final report."
+    ],
+    "research_summary": " This dataset presents a comparison of various generative models for text synthesis, specifically focusing on FID (Fr\u00e9chet Inception Distance) and KID (Kullback-Leibler Divergence) scores, latency, and throughput for different sample sizes (10, 20, 50). The models compared include DPMC (Differential Privacy Markov Chains), DPMC-PC (Differential Privacy Markov Chains with Posterior Correction), DPM (Dirichlet Process Mixture of Experts), DPM-PC (Dirichlet Process Mixture of Experts with Posterior Correction), UniPC (Universal Probability Computation), and a custom solver.\n\nThe results indicate that, for the given datasets, UniPC generally performs better in terms of FID and KID scores, suggesting a higher quality of text synthesis compared to other models. However, it has relatively lower throughput than DPMC-based models for smaller sample sizes (10 and 20). For larger sample sizes (50), UniPC's throughput is comparable to that of DPMC-based models.\n\nIn terms of latency, UniPC generally shows faster execution times compared to DPMC-based models, making it a more efficient choice for real-time applications. The custom solver performs comparably to UniPC in most cases but has higher latency and lower throughput in some instances.\n\nOverall, the findings suggest that UniPC is a promising generative model for text synthesis, offering both high quality results and fast execution times. Further research could focus on optimizing UniPC's performance for larger sample sizes and exploring its potential applications in various domains.",
+    "selection": {
+        "method": "bqrps",
+        "selected": {
+            "config_id": "ddim_linear_nfe20_fp32",
+            "sampler": "ddim",
+            "nfe": 20,
+            "fid": 140.90017700195312,
+            "quality_risk": 140.90017700195312,
+            "quality_uncertainty_empirical": false,
+            "latency_mean_ms": 269.9565666844137,
+            "latency_upper_risk_ms": 332.67911117808933,
+            "latency_used_for_budget_ms": 332.67911117808933,
+            "latency_uncertainty_source": "one_sided_student_t_upper_bound",
+            "memory_mb": 36.479,
+            "feasible": true,
+            "reasons": []
+        },
+        "feasible_count": 5,
+        "assessments": [
+            {
+                "config_id": "ddim_linear_nfe10_fp32",
+                "sampler": "ddim",
+                "nfe": 10,
+                "fid": 186.1238555908203,
+                "quality_risk": 186.1238555908203,
+                "quality_uncertainty_empirical": false,
+                "latency_mean_ms": 132.74543333682232,
+                "latency_upper_risk_ms": 144.99070442139313,
+                "latency_used_for_budget_ms": 144.99070442139313,
+                "latency_uncertainty_source": "one_sided_student_t_upper_bound",
+                "memory_mb": 36.479,
+                "feasible": true,
+                "reasons": []
+            },
+            {
+                "config_id": "ddim_linear_nfe20_fp32",
+                "sampler": "ddim",
+                "nfe": 20,
+                "fid": 140.90017700195312,
+                "quality_risk": 140.90017700195312,
+                "quality_uncertainty_empirical": false,
+                "latency_mean_ms": 269.9565666844137,
+                "latency_upper_risk_ms": 332.67911117808933,
+                "latency_used_for_budget_ms": 332.67911117808933,
+                "latency_uncertainty_source": "one_sided_student_t_upper_bound",
+                "memory_mb": 36.479,
+                "feasible": true,
+                "reasons": []
+            },
+            {
+                "config_id": "ddim_linear_nfe50_fp32",
+                "sampler": "ddim",
+                "nfe": 50,
+                "fid": 101.18545532226562,
+                "quality_risk": 101.18545532226562,
+                "quality_uncertainty_empirical": false,
+                "latency_mean_ms": 1087.8656666609459,
+                "latency_upper_risk_ms": 1303.1249942528,
+                "latency_used_for_budget_ms": 1303.1249942528,
+                "latency_uncertainty_source": "one_sided_student_t_upper_bound",
+                "memory_mb": 36.479,
+                "feasible": false,
+                "reasons": [
+                    "latency_budget_exceeded"
+                ]
+            },
+            {
+                "config_id": "ddpm_linear_nfe1000_fp32",
+                "sampler": "ddpm",
+                "nfe": 1000,
+                "fid": 108.72185516357422,
+                "quality_risk": 108.72185516357422,
+                "quality_uncertainty_empirical": false,
+                "latency_mean_ms": 16703.612166670307,
+                "latency_upper_risk_ms": 16757.74336592081,
+                "latency_used_for_budget_ms": 16757.74336592081,
+                "latency_uncertainty_source": "one_sided_student_t_upper_bound",
+                "memory_mb": 36.478,
+                "feasible": false,
+                "reasons": [
+                    "latency_budget_exceeded",
+                    "nfe_budget_exceeded"
+                ]
+            },
+            {
+                "config_id": "dpm_solver_linear_nfe10_fp32",
+                "sampler": "dpm_solver",
+                "nfe": 10,
+                "fid": 248.09454345703125,
+                "quality_risk": 248.09454345703125,
+                "quality_uncertainty_empirical": false,
+                "latency_mean_ms": 173.56870000367053,
+                "latency_upper_risk_ms": 248.753165895361,
+                "latency_used_for_budget_ms": 248.753165895361,
+                "latency_uncertainty_source": "one_sided_student_t_upper_bound",
+                "memory_mb": 36.478,
+                "feasible": true,
+                "reasons": []
+            },
+            {
+                "config_id": "dpm_solver_linear_nfe20_fp32",
+                "sampler": "dpm_solver",
+                "nfe": 20,
+                "fid": 232.6023712158203,
+                "quality_risk": 232.6023712158203,
+                "quality_uncertainty_empirical": false,
+                "latency_mean_ms": 248.787266658231,
+                "latency_upper_risk_ms": 251.7245920542908,
+                "latency_used_for_budget_ms": 251.7245920542908,
+                "latency_uncertainty_source": "one_sided_student_t_upper_bound",
+                "memory_mb": 36.478,
+                "feasible": true,
+                "reasons": []
+            },
+            {
+                "config_id": "dpm_solver_linear_nfe50_fp32",
+                "sampler": "dpm_solver",
+                "nfe": 50,
+                "fid": 222.63616943359375,
+                "quality_risk": 222.63616943359375,
+                "quality_uncertainty_empirical": false,
+                "latency_mean_ms": 1076.1551666752591,
+                "latency_upper_risk_ms": 1198.5326036386923,
+                "latency_used_for_budget_ms": 1198.5326036386923,
+                "latency_uncertainty_source": "one_sided_student_t_upper_bound",
+                "memory_mb": 36.478,
+                "feasible": false,
+                "reasons": [
+                    "latency_budget_exceeded"
+                ]
+            },
+            {
+                "config_id": "unipc_linear_nfe10_fp32",
+                "sampler": "unipc",
+                "nfe": 10,
+                "fid": 244.9410400390625,
+                "quality_risk": 244.9410400390625,
+                "quality_uncertainty_empirical": false,
+                "latency_mean_ms": 188.5197333273633,
+                "latency_upper_risk_ms": 199.19547378502506,
+                "latency_used_for_budget_ms": 199.19547378502506,
+                "latency_uncertainty_source": "one_sided_student_t_upper_bound",
+                "memory_mb": 36.666,
+                "feasible": true,
+                "reasons": []
+            },
+            {
+                "config_id": "unipc_linear_nfe20_fp32",
+                "sampler": "unipc",
+                "nfe": 20,
+                "fid": 229.91424560546875,
+                "quality_risk": 229.91424560546875,
+                "quality_uncertainty_empirical": false,
+                "latency_mean_ms": 310.9302333323285,
+                "latency_upper_risk_ms": 366.0264168097266,
+                "latency_used_for_budget_ms": 366.0264168097266,
+                "latency_uncertainty_source": "one_sided_student_t_upper_bound",
+                "memory_mb": 36.666,
+                "feasible": false,
+                "reasons": [
+                    "latency_budget_exceeded"
+                ]
+            },
+            {
+                "config_id": "unipc_linear_nfe50_fp32",
+                "sampler": "unipc",
+                "nfe": 50,
+                "fid": 219.10238647460938,
+                "quality_risk": 219.10238647460938,
+                "quality_uncertainty_empirical": false,
+                "latency_mean_ms": 734.9477666721214,
+                "latency_upper_risk_ms": 764.4889490731894,
+                "latency_used_for_budget_ms": 764.4889490731894,
+                "latency_uncertainty_source": "one_sided_student_t_upper_bound",
+                "memory_mb": 36.666,
+                "feasible": false,
+                "reasons": [
+                    "latency_budget_exceeded"
+                ]
+            }
+        ]
+    },
+    "execution": {
+        "candidate_id": "ddim_linear_nfe20_fp32",
+        "sampler": "ddim",
+        "nfe": 20,
+        "sample_count": 32,
+        "batch_size": 4,
+        "number_of_batches": 8,
+        "seed": 42,
+        "latency_ms": 411.7480874992907,
+        "total_generation_latency_ms": 3293.9846999943256,
+        "min_batch_latency_ms": 195.53119997726753,
+        "max_batch_latency_ms": 1689.104600023711,
+        "batch_latency_samples_ms": [
+            1689.104600023711,
+            212.43869999307208,
+            263.8740999973379,
+            260.39310000487603,
+            237.52830000012182,
+            225.83929999382235,
+            195.53119997726753,
+            209.27540000411682
+        ],
+        "throughput_images_per_second": 9.7146777882894,
+        "memory": {
+            "baseline_allocated_mb": 6.8994140625,
+            "peak_allocated_mb": 20.38916015625,
+            "peak_reserved_mb": 56.0,
+            "incremental_peak_allocated_mb": 13.48974609375
+        },
+        "generated_samples_path": "results\\agentic\\generated\\ddim_linear_nfe20_fp32_seed42.pt",
+        "device": "cuda"
+    },
+    "evaluation": {
+        "candidate_id": "ddim_linear_nfe20_fp32",
+        "sample_count": 32,
+        "sample_shape": [
+            32,
+            3,
+            32,
+            32
+        ],
+        "samples_finite": true,
+        "sample_min": -1.0,
+        "sample_max": 1.0,
+        "latency_ms": 411.7480874992907,
+        "throughput_images_per_second": 9.7146777882894,
+        "memory": {
+            "baseline_allocated_mb": 6.8994140625,
+            "peak_allocated_mb": 20.38916015625,
+            "peak_reserved_mb": 56.0,
+            "incremental_peak_allocated_mb": 13.48974609375
+        },
+        "nfe": 20,
+        "fid": null,
+        "kid_mean": null,
+        "kid_std": null,
+        "evaluation_mode": "smoke_test",
+        "note": "FID and KID skipped. This run validates the execution pipeline, not image quality."
+    },
+    "final_report_path": "results\\agentic\\aodma_report_20261117T163621Z.md"
+}

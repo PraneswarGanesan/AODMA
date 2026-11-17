@@ -1,0 +1,133 @@
+{
+    "experiment": "aodma_cifar10_quality_repeated_v2",
+    "timestamp_utc": "2026-11-17T13:25:28.208337+00:00",
+    "seed": 123,
+    "checkpoint": "checkpoints/ddpm_cifar10/latest.pt",
+    "device": "cuda",
+    "sample_count": 1000,
+    "batch_size": 16,
+    "real_reference": "CIFAR-10 test split",
+    "metrics": {
+        "fid": "Frechet Inception Distance",
+        "kid": "Kernel Inception Distance"
+    },
+    "results": [
+        {
+            "candidate": {
+                "name": "ddim_10",
+                "sampler": "ddim",
+                "steps": 10
+            },
+            "seed": 123,
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 183.79336547851562,
+            "kid_mean": 0.12539999186992645,
+            "kid_std": 1.7240138561191998e-07
+        },
+        {
+            "candidate": {
+                "name": "ddim_20",
+                "sampler": "ddim",
+                "steps": 20
+            },
+            "seed": 123,
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 141.43084716796875,
+            "kid_mean": 0.08198034763336182,
+            "kid_std": 2.7905696242669364e-07
+        },
+        {
+            "candidate": {
+                "name": "ddim_50",
+                "sampler": "ddim",
+                "steps": 50
+            },
+            "seed": 123,
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 102.32456970214844,
+            "kid_mean": 0.04506061598658562,
+            "kid_std": 1.4177248885971494e-07
+        },
+        {
+            "candidate": {
+                "name": "dpm_solver_10",
+                "sampler": "dpm_solver",
+                "steps": 10
+            },
+            "seed": 123,
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 248.91712951660156,
+            "kid_mean": 0.17288193106651306,
+            "kid_std": 1.754607410475728e-07
+        },
+        {
+            "candidate": {
+                "name": "dpm_solver_20",
+                "sampler": "dpm_solver",
+                "steps": 20
+            },
+            "seed": 123,
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 234.63250732421875,
+            "kid_mean": 0.15465900301933289,
+            "kid_std": 1.0917290182987927e-07
+        },
+        {
+            "candidate": {
+                "name": "dpm_solver_50",
+                "sampler": "dpm_solver",
+                "steps": 50
+            },
+            "seed": 123,
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 221.85452270507812,
+            "kid_mean": 0.1380859911441803,
+            "kid_std": 1.4013163252002414e-07
+        },
+        {
+            "candidate": {
+                "name": "unipc_10",
+                "sampler": "unipc",
+                "steps": 10
+            },
+            "seed": 123,
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 245.34207153320312,
+            "kid_mean": 0.16940443217754364,
+            "kid_std": 1.5230435224111716e-07
+        },
+        {
+            "candidate": {
+                "name": "unipc_20",
+                "sampler": "unipc",
+                "steps": 20
+            },
+            "seed": 123,
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 231.63291931152344,
+            "kid_mean": 0.15200665593147278,
+            "kid_std": 1.099317543662437e-07
+        },
+        {
+            "candidate": {
+                "name": "unipc_50",
+                "sampler": "unipc",
+                "steps": 50
+            },
+            "seed": 123,
+            "sample_count": 1000,
+            "real_reference": "CIFAR-10 test split",
+            "fid": 218.3002471923828,
+            "kid_mean": 0.13358630239963531,
+            "kid_std": 1.5166568800850655e-07
+        }
+    ]
+}

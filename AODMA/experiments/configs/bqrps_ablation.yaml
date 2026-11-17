@@ -1,0 +1,54 @@
+
+experiment:
+  name: aodma_bqrps_ablation_v1
+  dataset: CIFAR-10
+  quality_metric: FID
+  seed: 42
+
+portfolio:
+  path: results/cifar10/bqrps/unified_portfolio.json
+
+budget:
+  max_latency_ms: 350.0
+  max_memory_mb: 40.0
+  max_nfe: 50
+
+selection:
+  quality_safety_margin: 0.0
+
+methods:
+  - bqrps
+  - best_fid
+  - fastest
+  - lowest_nfe
+
+ablations:
+  - name: full_bqrps
+    use_latency_uncertainty: true
+    max_latency_ms: 350.0
+    max_memory_mb: 40.0
+    max_nfe: 50
+
+  - name: no_latency_uncertainty
+    use_latency_uncertainty: false
+    max_latency_ms: 350.0
+    max_memory_mb: 40.0
+    max_nfe: 50
+
+  - name: no_latency_constraint
+    use_latency_uncertainty: true
+    max_latency_ms: 100000.0
+    max_memory_mb: 40.0
+    max_nfe: 50
+
+  - name: no_memory_constraint
+    use_latency_uncertainty: true
+    max_latency_ms: 350.0
+    max_memory_mb: 100000.0
+    max_nfe: 50
+
+  - name: no_nfe_constraint
+    use_latency_uncertainty: true
+    max_latency_ms: 350.0
+    max_memory_mb: 40.0
+    max_nfe: 2000

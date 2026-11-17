@@ -1,0 +1,299 @@
+{
+    "experiment": "aodma_bqrps_unified_portfolio_v1",
+    "dataset": "CIFAR-10",
+    "quality_metric": "FID",
+    "candidate_count": 10,
+    "uncertainty_note": "One FID observation per candidate. Quality uncertainty is not yet statistically estimated.",
+    "candidates": [
+        {
+            "config_id": "ddim_linear_nfe10_fp32",
+            "sampler": "ddim",
+            "schedule": "linear",
+            "nfe": 10,
+            "precision": "fp32",
+            "fid": 186.1238555908203,
+            "kid_mean": 0.12675704061985016,
+            "kid_std": 1.7357294268549595e-07,
+            "latency_ms": [
+                130.1445999997668,
+                140.9513000107836,
+                127.14039999991655
+            ],
+            "latency_mean_ms": 132.74543333682232,
+            "latency_ci95": {
+                "confidence_level": 0.95,
+                "lower": 127.14039999991655,
+                "upper": 140.9513000107836,
+                "method": "percentile_bootstrap",
+                "bootstrap_iterations": 5000
+            },
+            "peak_memory_mb": 36.479,
+            "peak_reserved_mb": 76.0,
+            "throughput": 120.53145330734141,
+            "actual_nfe": 10,
+            "benchmark_repetitions": 3,
+            "quality_sample_count": 1000
+        },
+        {
+            "config_id": "ddim_linear_nfe20_fp32",
+            "sampler": "ddim",
+            "schedule": "linear",
+            "nfe": 20,
+            "precision": "fp32",
+            "fid": 140.90017700195312,
+            "kid_mean": 0.08182676136493683,
+            "kid_std": 1.9414575547216373e-07,
+            "latency_ms": [
+                312.9038000188302,
+                249.41260000923648,
+                247.5533000251744
+            ],
+            "latency_mean_ms": 269.9565666844137,
+            "latency_ci95": {
+                "confidence_level": 0.95,
+                "lower": 247.5533000251744,
+                "upper": 312.9038000188302,
+                "method": "percentile_bootstrap",
+                "bootstrap_iterations": 5000
+            },
+            "peak_memory_mb": 36.479,
+            "peak_reserved_mb": 76.0,
+            "throughput": 59.268793482265686,
+            "actual_nfe": 20,
+            "benchmark_repetitions": 3,
+            "quality_sample_count": 1000
+        },
+        {
+            "config_id": "ddim_linear_nfe50_fp32",
+            "sampler": "ddim",
+            "schedule": "linear",
+            "nfe": 50,
+            "precision": "fp32",
+            "fid": 101.18545532226562,
+            "kid_mean": 0.04430480673909187,
+            "kid_std": 1.6076666042863508e-07,
+            "latency_ms": [
+                941.233799996553,
+                1147.8484999970533,
+                1174.5146999892313
+            ],
+            "latency_mean_ms": 1087.8656666609459,
+            "latency_ci95": {
+                "confidence_level": 0.95,
+                "lower": 941.233799996553,
+                "upper": 1174.5146999892313,
+                "method": "percentile_bootstrap",
+                "bootstrap_iterations": 5000
+            },
+            "peak_memory_mb": 36.479,
+            "peak_reserved_mb": 76.0,
+            "throughput": 14.707698285129084,
+            "actual_nfe": 50,
+            "benchmark_repetitions": 3,
+            "quality_sample_count": 1000
+        },
+        {
+            "config_id": "ddpm_linear_nfe1000_fp32",
+            "sampler": "ddpm",
+            "schedule": "linear",
+            "nfe": 1000,
+            "precision": "fp32",
+            "fid": 108.72185516357422,
+            "kid_mean": 0.026003694161772728,
+            "kid_std": 1.5076709303230018e-07,
+            "latency_ms": [
+                16680.375600000843,
+                16740.251000010176,
+                16690.2098999999
+            ],
+            "latency_mean_ms": 16703.612166670307,
+            "latency_ci95": {
+                "confidence_level": 0.95,
+                "lower": 16680.375600000843,
+                "upper": 16740.251000010176,
+                "method": "percentile_bootstrap",
+                "bootstrap_iterations": 5000
+            },
+            "peak_memory_mb": 36.478,
+            "peak_reserved_mb": 76.0,
+            "throughput": 0.9578766461020769,
+            "actual_nfe": 1000,
+            "benchmark_repetitions": 3,
+            "quality_sample_count": 1000
+        },
+        {
+            "config_id": "dpm_solver_linear_nfe10_fp32",
+            "sampler": "dpm_solver",
+            "schedule": "linear",
+            "nfe": 10,
+            "precision": "fp32",
+            "fid": 248.09454345703125,
+            "kid_mean": 0.1685461699962616,
+            "kid_std": 7.747686936454556e-08,
+            "latency_ms": [
+                156.13529999973252,
+                224.2491000215523,
+                140.32169998972677
+            ],
+            "latency_mean_ms": 173.56870000367053,
+            "latency_ci95": {
+                "confidence_level": 0.95,
+                "lower": 140.32169998972677,
+                "upper": 224.2491000215523,
+                "method": "percentile_bootstrap",
+                "bootstrap_iterations": 5000
+            },
+            "peak_memory_mb": 36.478,
+            "peak_reserved_mb": 76.0,
+            "throughput": 92.18251908127237,
+            "actual_nfe": 10,
+            "benchmark_repetitions": 3,
+            "quality_sample_count": 1000
+        },
+        {
+            "config_id": "dpm_solver_linear_nfe20_fp32",
+            "sampler": "dpm_solver",
+            "schedule": "linear",
+            "nfe": 20,
+            "precision": "fp32",
+            "fid": 232.6023712158203,
+            "kid_mean": 0.1495957374572754,
+            "kid_std": 1.5115965368295292e-07,
+            "latency_ms": [
+                248.4993999823928,
+                247.20680000609718,
+                250.65559998620301
+            ],
+            "latency_mean_ms": 248.787266658231,
+            "latency_ci95": {
+                "confidence_level": 0.95,
+                "lower": 247.20680000609718,
+                "upper": 250.65559998620301,
+                "method": "percentile_bootstrap",
+                "bootstrap_iterations": 5000
+            },
+            "peak_memory_mb": 36.478,
+            "peak_reserved_mb": 76.0,
+            "throughput": 64.31197309619482,
+            "actual_nfe": 20,
+            "benchmark_repetitions": 3,
+            "quality_sample_count": 1000
+        },
+        {
+            "config_id": "dpm_solver_linear_nfe50_fp32",
+            "sampler": "dpm_solver",
+            "schedule": "linear",
+            "nfe": 50,
+            "precision": "fp32",
+            "fid": 222.63616943359375,
+            "kid_mean": 0.1356738656759262,
+            "kid_std": 1.4469927123172965e-07,
+            "latency_ms": [
+                1004.83059999533,
+                1149.948400008725,
+                1073.6865000217222
+            ],
+            "latency_mean_ms": 1076.1551666752591,
+            "latency_ci95": {
+                "confidence_level": 0.95,
+                "lower": 1004.83059999533,
+                "upper": 1149.948400008725,
+                "method": "percentile_bootstrap",
+                "bootstrap_iterations": 5000
+            },
+            "peak_memory_mb": 36.478,
+            "peak_reserved_mb": 76.0,
+            "throughput": 14.867744443797447,
+            "actual_nfe": 50,
+            "benchmark_repetitions": 3,
+            "quality_sample_count": 1000
+        },
+        {
+            "config_id": "unipc_linear_nfe10_fp32",
+            "sampler": "unipc",
+            "schedule": "linear",
+            "nfe": 10,
+            "precision": "fp32",
+            "fid": 244.9410400390625,
+            "kid_mean": 0.16534028947353363,
+            "kid_std": 1.8035261462046037e-07,
+            "latency_ms": [
+                194.97829998726957,
+                188.2595999923069,
+                182.32130000251345
+            ],
+            "latency_mean_ms": 188.5197333273633,
+            "latency_ci95": {
+                "confidence_level": 0.95,
+                "lower": 182.32130000251345,
+                "upper": 194.97829998726957,
+                "method": "percentile_bootstrap",
+                "bootstrap_iterations": 5000
+            },
+            "peak_memory_mb": 36.666,
+            "peak_reserved_mb": 76.0,
+            "throughput": 84.87175171320715,
+            "actual_nfe": 10,
+            "benchmark_repetitions": 3,
+            "quality_sample_count": 1000
+        },
+        {
+            "config_id": "unipc_linear_nfe20_fp32",
+            "sampler": "unipc",
+            "schedule": "linear",
+            "nfe": 20,
+            "precision": "fp32",
+            "fid": 229.91424560546875,
+            "kid_mean": 0.14708620309829712,
+            "kid_std": 1.2414598415944056e-07,
+            "latency_ms": [
+                333.7142000091262,
+                325.5907999991905,
+                273.4856999886688
+            ],
+            "latency_mean_ms": 310.9302333323285,
+            "latency_ci95": {
+                "confidence_level": 0.95,
+                "lower": 273.4856999886688,
+                "upper": 333.7142000091262,
+                "method": "percentile_bootstrap",
+                "bootstrap_iterations": 5000
+            },
+            "peak_memory_mb": 36.666,
+            "peak_reserved_mb": 76.0,
+            "throughput": 51.458489026697116,
+            "actual_nfe": 20,
+            "benchmark_repetitions": 3,
+            "quality_sample_count": 1000
+        },
+        {
+            "config_id": "unipc_linear_nfe50_fp32",
+            "sampler": "unipc",
+            "schedule": "linear",
+            "nfe": 50,
+            "precision": "fp32",
+            "fid": 219.10238647460938,
+            "kid_mean": 0.13149704039096832,
+            "kid_std": 2.0822135127218644e-07,
+            "latency_ms": [
+                738.6311000154819,
+                715.8760000020266,
+                750.3361999988556
+            ],
+            "latency_mean_ms": 734.9477666721214,
+            "latency_ci95": {
+                "confidence_level": 0.95,
+                "lower": 715.8760000020266,
+                "upper": 750.3361999988556,
+                "method": "percentile_bootstrap",
+                "bootstrap_iterations": 5000
+            },
+            "peak_memory_mb": 36.666,
+            "peak_reserved_mb": 76.0,
+            "throughput": 21.770254602512455,
+            "actual_nfe": 50,
+            "benchmark_repetitions": 3,
+            "quality_sample_count": 1000
+        }
+    ]
+}

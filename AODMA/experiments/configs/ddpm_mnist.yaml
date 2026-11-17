@@ -1,0 +1,36 @@
+
+experiment:
+  name: aodma_ddpm_mnist
+  seed: 42
+
+dataset:
+  name: mnist
+  data_dir: data
+  image_size: 28
+  download: true
+
+model:
+  in_channels: 1
+  out_channels: 1
+  base_channels: 32
+  time_dim: 256
+
+diffusion:
+  timesteps: 1000
+  schedule_type: linear
+  beta_start: 0.0001
+  beta_end: 0.02
+
+training:
+  epochs: 20
+  batch_size: 32
+  learning_rate: 0.0002
+  weight_decay: 0.0001
+  ema_decay: 0.999
+  gradient_clip: 1.0
+  mixed_precision: false
+  num_workers: 0
+
+storage:
+  checkpoint_dir: checkpoints/ddpm_mnist
+  log_path: results/ddpm_mnist/training.jsonl
